@@ -1,0 +1,31 @@
+{
+  "name": "alerts",
+  "version": "0.0.1",
+  "description": "Pub/Sub alerts with various sources, subscribers and filters",
+  "main": "index.js",
+  "dependencies": {
+    "level": "^1.4.0",
+    "plano": "0.0.6"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/legendum/alerts.git"
+  },
+  "keywords": [
+    "alerts",
+    "notification",
+    "pub/sub"
+  ],
+  "author": "Kevin Hutchinson <kevin.hutchinson@legendum.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/legendum/alerts/issues"
+  },
+  "homepage": "https://github.com/legendum/alerts#readme"
+}
