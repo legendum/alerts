@@ -15,7 +15,7 @@ An email has a user
     }
 
 ### Users
-A user has a username, langauge, default email address, tokens (own and given)
+A user has a username, language, default email address, tokens (own and given)
 
 * uuid (key)
 * data:
@@ -106,9 +106,10 @@ Topics have tokens and tags
       topics: ['0d599f0ec05c3bda8c3b8a68c32a1b47/news'] // private topic
     }
 
-### Alerts
+### Alerts (each alert database is named with a topic, like "news_alerts")
+Alets may come from user tokens or from feeds
 
-* epoch + tokenId (key)
+* epoch+token or epoch+feedUUID (key)
 * data (any payload, up to a certain size)
 
 ### Feeds
@@ -124,7 +125,9 @@ Feeds have items
       lastReadAt: 1454397264000, // important
       image: '',
       language: 'en-us',
-      topics: ['0d599f0ec05c3bda8c3b8a68c32a1b47/news']
+      topics: {
+        '0d599f0ec05c3bda8c3b8a68c32a1b47/news': {subscribedAt: 1454401979000}
+      }
     }
 
 ### Items
@@ -133,6 +136,7 @@ Feeds have items
 * data:
 
     'http://www.bbc.co.uk/news/business-35460398': {
+      uuid: 'c0e901dab656aef0716655cec8e7eee7',
       title: '',
       description: '',
       link: '',
@@ -150,6 +154,16 @@ Feeds have items
 
 ### User creates a new public topic ("news")
 
+1. A new token is created for the user
+2. A new topic is created and the token is associated with the topic
+
 ### User shares the topic with another user by creating a new token
 
+1. A new token is created for the other user as shared by this user
+2. The topic is updated to include details about the shared token
+
 ### Topic owner subscribes an RSS feed to the topic
+
+1. A new RSS feed is created with the topic included in the topic hash
+2. Periodically, new items are read, and the topics in the hash are updated
+3. For each new item, an alert is created for each subscribed topic
