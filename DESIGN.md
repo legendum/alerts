@@ -12,7 +12,8 @@ An email has a user
       "uuid":"0d599f0ec05c3bda8c3b8a68c32a1b47",
       "passwordCrypt":"blahblahblah",
       "canSend":true,
-      "sentAt":1454396457000
+      "sentAt":1454396457000,
+      "confirmedAt":1454396457000
     }
 ```
 
@@ -116,7 +117,7 @@ Topics have tokens and tags
     }
 ```
 
-### Alerts (each alert database is named with a topic, like "news_alerts")
+### Alerts (each alert database is named with a topic, like "alerts_news")
 Alets may come from user tokens or from feeds
 
 * epoch+token or epoch+feedUUID (key)
