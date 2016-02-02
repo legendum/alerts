@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "level": "^1.4.0",
-    "plano": "1.0.4"
+    "plano": "^2.1.2"
   },
   "devDependencies": {
     "mocha": "^2.4.4"
