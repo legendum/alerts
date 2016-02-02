@@ -117,8 +117,8 @@ Topics have tokens and tags
     }
 ```
 
-### Alerts (each alert database is named with a topic, like "alerts_news")
-Alets may come from user tokens or from feeds
+### Alerts (each alerts database is named with a topic, like "alerts_news")
+Alerts may come from user tokens _or_ from feeds
 
 * epoch+token or epoch+feedUUID (key)
 * data (any payload, up to a certain size)
